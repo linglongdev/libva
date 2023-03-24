@@ -1,0 +1,26 @@
+package:
+  id: libva
+  name: libva
+  version: 2.4.0
+  kind: lib
+  description: |
+    libva.
+
+base:
+  id: org.deepin.base
+  version: 20.5.0
+
+source:
+  kind: git
+  url: https://github.com/deepin-community/libva.git
+  version: master
+  commit: 112460b10fb57bf58bad9ce6e904a0dfac35bab4
+
+  patch: []
+variables:
+  extra_args: |
+    --enable-va-messaging \
+    --disable-wayland    
+
+build:
+  kind: autotools
